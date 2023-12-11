@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking & Reservations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <section class="reservation" id="hotelBookingSection">
+        <form id="hotelBookingForm">
+            <h2>Hotel Booking</h2>
+            <div class="flex">
+                <div class="box">
+                    <label for="roomType">Room Type</label>
+                    <select id="roomType" class="input" required>
+                        <option value="single">Single</option>
+                        <option value="double">Double</option>
+                        <option value="triple">Triple</option>
+                    </select>
+                </div>
+
+                <div class="box">
+                    <label for="numRooms">Number of Rooms</label>
+                    <input type="number" id="numRooms" class="input" min="1" required>
+                </div>
+
+                <div class="box">
+                    <label for="adults">Number of Adults</label>
+                    <input type="number" id="adults" class="input" min="1" required>
+                </div>
+
+                <div class="box">
+                    <label for="children">Number of Children</label>
+                    <input type="number" id="children" class="input" min="0" required>
+                </div>
+
+                <div class="box">
+                    <label for="duration">Duration of Stay (days)</label>
+                    <input type="number" id="duration" class="input" min="1" required>
+                </div>
+
+                <div class="box">
+                    <label for="wifi">WiFi</label>
+                    <input type="checkbox" id="wifi" class="input">
+                </div>
+
+                <div class="box">
+                    <label for="view">View</label>
+                    <select id="view" class="input" required>
+                        <option value="none">None</option>
+                        <option value="garden">Garden View</option>
+                        <option value="pool">Pool View</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="flex">
+                <div class="box">
+                    <label for="promoCode">Promo Code</label>
+                    <input type="text" id="promoCode" class="input">
+                </div>
+
+                <div class="box">
+                    <label>Loyalty Points</label>
+                    <p id="loyaltyPoints">0</p>
+                </div>
+            </div>
+
+            <button type="submit" class="btn">Book Now</button>
+        </form>
+    </section>
+
+    <section class="reservation" id="adventureBookingSection">
+        <form id="adventureBookingForm">
+            <h2>Adventure Booking</h2>
+            <div class="flex">
+                <div class="box">
+                    <label for="adventureType">Adventure Type</label>
+                    <select id="adventureType" class="input" required>
+                        <option value="localAdult">Diving for Local Adults</option>
+                        <option value="localKids">Diving for Local Kids</option>
+                        <option value="foreignAdult">Diving for Foreign Adults</option>
+                        <option value="foreignKids">Diving for Foreign Kids</option>
+                    </select>
+                </div>
+
+                <div class="box">
+                    <label for="guide">Guide</label>
+                    <input type="checkbox" id="guide" class="input">
+                </div>
+            </div>
+
+            <button type="submit" class="btn">Book Adventure</button>
+        </form>
+    </section>
+
+    <section class="summary" id="adventureBookingSummary">
+        <h2>Adventure Booking Summary</h2>
+        <p>Total Adventure Cost: <span id="adventureTotalCost">LKR 0.00</span></p>
+    </section>
+
+    <div class="summary">
+        <h2>Booking Summary</h2>
+        <p>Total Cost: <span id="totalCost">LKR 0.00</span></p>
+        <button type="button" id="addToFavoritesBtn" onclick="addToFavorites()" class="fav-btn">Add to Favorites</button>
+
+        <button type="button" id="loyaltyPoints"onclick="checkLoyalty()" class="loyalty-btn">Check Loyalty</button>
+    </div>
+
+    <table id="bookingSummaryTable">
+        <caption>Booking Summary</caption>
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr>
+                <td>Total Hotel Cost</td>
+                <td id="hotelCostCell">LKR 0.00</td>
+            </tr>
+            <tr>
+                <td>Total Adventure Cost</td>
+                <td id="adventureCostCell">LKR 0.00</td>
+            </tr>
+            <tr>
+                <td>Total Cost</td>
+                <td id="totalCostCell">LKR 0.00</td>
+            </tr>
+            <tr>
+                <td>Loyalty Points</td>
+                <td id="loyaltyPointsCell">0</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
